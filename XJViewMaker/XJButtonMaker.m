@@ -16,7 +16,7 @@
 @implementation XJButtonMaker
 
 - (instancetype)initView {
-    self.button = [UIButton new];
+    self.button = [UIButton buttonWithType:UIButtonTypeCustom];
     
     return self;
 }
@@ -36,6 +36,24 @@
 - (XJButtonMaker* (^)(UIColor *, UIControlState))titleColor {
     return ^XJButtonMaker* (UIColor* color, UIControlState state) {
         [self.button setTitleColor:color forState:state];
+        
+        return self;
+    };
+}
+
+/// Font
+- (XJButtonMaker *(^)(UIFont *))titleFont {
+    return ^XJButtonMaker* (UIFont* font) {
+        self.button.titleLabel.font = font;
+        
+        return self;
+    };
+}
+
+/// Selected
+- (XJButtonMaker *(^)(BOOL))selected {
+    return ^XJButtonMaker* (BOOL flag) {
+        self.button.selected = flag;
         
         return self;
     };
@@ -76,6 +94,13 @@
     };
 }
 
+- (XJButtonMaker *(^)(BOOL))adjustsImageWhenHighlighted {
+    return ^XJButtonMaker* (BOOL flag) {
+        self.button.adjustsImageWhenHighlighted = flag;
+        
+        return self;
+    };
+}
 
 #pragma mark - 按钮点击事件
 
@@ -119,6 +144,13 @@
 }
 
 #pragma mark - UIView公共属性
+
+- (XJButtonMaker *(^)(BOOL))clipsToBounds {
+    return ^XJButtonMaker* (BOOL flag) {
+        self.button.clipsToBounds = flag;
+        return self;
+    };
+}
 
 - (XJButtonMaker* _Nonnull (^)(UIView * _Nonnull))addTo {
     return ^XJButtonMaker* (UIView* superview) {
@@ -206,6 +238,27 @@
     };
 }
 
+- (XJButtonMaker* _Nonnull (^)(UIColor* _Nonnull))tintColor {
+    return ^XJButtonMaker* (UIColor* color) {
+        self.button.tintColor = color;
+        return self;
+    };
+}
+
+- (XJButtonMaker *(^)(CGFloat))alpha {
+    return ^XJButtonMaker* (CGFloat alpha) {
+        self.button.alpha = alpha;
+        return self;
+    };
+}
+
+- (XJButtonMaker *(^)(UIViewContentMode))contentMode {
+    return ^XJButtonMaker* (UIViewContentMode mode) {
+        self.button.contentMode = mode;
+        return self;
+    };
+}
+
 @end
 
 
@@ -214,6 +267,15 @@
 
 + (instancetype)xj_make:(void (^)(XJButtonMaker* ))make {
     
+    XJButtonMaker* maker = [[XJButtonMaker alloc] initView];
+    if (make) {
+        make(maker);
+    }
+    
+    return maker.button;
+}
+
+- (instancetype)xj_make:(void (^)(XJButtonMaker *))make {
     XJButtonMaker* maker = [[XJButtonMaker alloc] initView];
     if (make) {
         make(maker);

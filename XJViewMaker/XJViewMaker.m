@@ -16,8 +16,15 @@
 
 - (instancetype)initView {
     self.view = [UIView new];
-
+    
     return self;
+}
+
+- (XJViewMaker *(^)(BOOL))clipsToBounds {
+    return ^XJViewMaker* (BOOL flag) {
+        self.view.clipsToBounds = flag;
+        return self;
+    };
 }
 
 - (XJViewMaker* _Nonnull (^)(UIView * _Nonnull))addTo {
@@ -102,6 +109,27 @@
 - (XJViewMaker* _Nonnull (^)(UIColor* _Nonnull))layerBorderColor {
     return ^XJViewMaker* (UIColor* color) {
         self.view.layer.borderColor = color.CGColor;
+        return self;
+    };
+}
+
+- (XJViewMaker* _Nonnull (^)(UIColor* _Nonnull))tintColor {
+    return ^XJViewMaker* (UIColor* color) {
+        self.view.tintColor = color;
+        return self;
+    };
+}
+
+- (XJViewMaker *(^)(CGFloat))alpha {
+    return ^XJViewMaker* (CGFloat alpha) {
+        self.view.alpha = alpha;
+        return self;
+    };
+}
+
+- (XJViewMaker *(^)(UIViewContentMode))contentMode {
+    return ^XJViewMaker* (UIViewContentMode mode) {
+        self.view.contentMode = mode;
         return self;
     };
 }

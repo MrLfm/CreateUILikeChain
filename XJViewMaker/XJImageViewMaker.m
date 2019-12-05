@@ -38,6 +38,13 @@
 
 #pragma mark - UIView公共属性
 
+- (XJImageViewMaker *(^)(BOOL))clipsToBounds {
+    return ^XJImageViewMaker* (BOOL flag) {
+        self.imageView.clipsToBounds = flag;
+        return self;
+    };
+}
+
 - (XJImageViewMaker* _Nonnull (^)(UIView * _Nonnull))addTo {
     return ^XJImageViewMaker* (UIView* superview) {
         if (superview) {
@@ -120,6 +127,27 @@
 - (XJImageViewMaker* _Nonnull (^)(UIColor* _Nonnull))layerBorderColor {
     return ^XJImageViewMaker* (UIColor* color) {
         self.imageView.layer.borderColor = color.CGColor;
+        return self;
+    };
+}
+
+- (XJImageViewMaker* _Nonnull (^)(UIColor* _Nonnull))tintColor {
+    return ^XJImageViewMaker* (UIColor* color) {
+        self.imageView.tintColor = color;
+        return self;
+    };
+}
+
+- (XJImageViewMaker *(^)(CGFloat))alpha {
+    return ^XJImageViewMaker* (CGFloat alpha) {
+        self.imageView.alpha = alpha;
+        return self;
+    };
+}
+
+- (XJImageViewMaker *(^)(UIViewContentMode))contentMode {
+    return ^XJImageViewMaker* (UIViewContentMode mode) {
+        self.imageView.contentMode = mode;
         return self;
     };
 }

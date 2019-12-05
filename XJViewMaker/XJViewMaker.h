@@ -11,6 +11,8 @@
 
 @interface XJViewMaker : NSObject
 
+/// clipsToBounds
+@property (nonatomic, copy, readonly) XJViewMaker* (^clipsToBounds)(BOOL flag);
 /// 父View
 @property (nonatomic, copy, readonly) XJViewMaker* (^addTo)(UIView* superview);
 /// frame
@@ -35,9 +37,13 @@
 @property (nonatomic, copy, readonly) XJViewMaker* (^layerBorderWidth)(CGFloat width);
 /// layer.borderColor：边框颜色，传入UIColor值
 @property (nonatomic, copy, readonly) XJViewMaker* (^layerBorderColor)(UIColor* color);
-
+/// tintColor
+@property (nonatomic, copy, readonly) XJViewMaker* (^tintColor)(UIColor* color);
+/// alpha
+@property (nonatomic, copy, readonly) XJViewMaker* (^alpha)(CGFloat alpha);
+/// contentMode
+@property (nonatomic, copy, readonly) XJViewMaker* (^contentMode)(UIViewContentMode mode);
 @end
-
 
 @interface UIView (XJMaker)
 /// 链式创建UIView

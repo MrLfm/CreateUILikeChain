@@ -34,14 +34,56 @@
     };
 }
 
-- (XJTableViewMaker* (^)(__unsafe_unretained Class, NSString *))registerClassWithIdentifier {
-    return ^XJTableViewMaker* (Class aClass, NSString* identifier) {
-        [self.tableView registerClass:aClass forCellReuseIdentifier:identifier];
+- (XJTableViewMaker* (^)(__unsafe_unretained Class))registerClass {
+    return ^XJTableViewMaker* (Class aClass) {
+        [self.tableView registerClass:[aClass class] forCellReuseIdentifier:NSStringFromClass(aClass)];
+        return self;
+    };
+}
+
+- (XJTableViewMaker *(^)(UITableViewCellSeparatorStyle))separatorStyle {
+    return ^XJTableViewMaker* (UITableViewCellSeparatorStyle style) {
+        self.tableView.separatorStyle = style;
+        return self;
+    };
+}
+
+- (XJTableViewMaker *(^)(UIColor *))separatorColor {
+    return ^XJTableViewMaker* (UIColor* color) {
+        self.tableView.separatorColor = color;
+        return self;
+    };
+}
+
+- (XJTableViewMaker *(^)(UIEdgeInsets))separatorInset {
+    return ^XJTableViewMaker* (UIEdgeInsets insets) {
+        self.tableView.separatorInset = insets;
+        return self;
+    };
+}
+
+- (XJTableViewMaker *(^)(UIView *))tableFooterView {
+    return ^XJTableViewMaker* (UIView* view) {
+        self.tableView.tableFooterView = view;
+        return self;
+    };
+}
+
+- (XJTableViewMaker *(^)(CGFloat))estimatedRowHeight {
+    return ^XJTableViewMaker* (CGFloat height) {
+        self.tableView.estimatedRowHeight = height;
         return self;
     };
 }
 
 #pragma mark - UIView公共属性
+
+- (XJTableViewMaker *(^)(BOOL))clipsToBounds {
+    return ^XJTableViewMaker* (BOOL flag) {
+        self.tableView.clipsToBounds = flag;
+        return self;
+    };
+}
 
 - (XJTableViewMaker* _Nonnull (^)(UIView * _Nonnull))addTo {
     return ^XJTableViewMaker* (UIView* superview) {
@@ -125,6 +167,27 @@
 - (XJTableViewMaker* _Nonnull (^)(UIColor* _Nonnull))layerBorderColor {
     return ^XJTableViewMaker* (UIColor* color) {
         self.tableView.layer.borderColor = color.CGColor;
+        return self;
+    };
+}
+
+- (XJTableViewMaker* _Nonnull (^)(UIColor* _Nonnull))tintColor {
+    return ^XJTableViewMaker* (UIColor* color) {
+        self.tableView.tintColor = color;
+        return self;
+    };
+}
+
+- (XJTableViewMaker *(^)(CGFloat))alpha {
+    return ^XJTableViewMaker* (CGFloat alpha) {
+        self.tableView.alpha = alpha;
+        return self;
+    };
+}
+
+- (XJTableViewMaker *(^)(UIViewContentMode))contentMode {
+    return ^XJTableViewMaker* (UIViewContentMode mode) {
+        self.tableView.contentMode = mode;
         return self;
     };
 }

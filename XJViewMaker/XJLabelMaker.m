@@ -73,6 +73,13 @@
 
 #pragma mark - UIView公共属性
 
+- (XJLabelMaker *(^)(BOOL))clipsToBounds {
+    return ^XJLabelMaker* (BOOL flag) {
+        self.label.clipsToBounds = flag;
+        return self;
+    };
+}
+
 - (XJLabelMaker* _Nonnull (^)(UIView * _Nonnull))addTo {
     return ^XJLabelMaker* (UIView* superview) {
         if (superview) {
@@ -159,6 +166,27 @@
     };
 }
 
+- (XJLabelMaker* _Nonnull (^)(UIColor* _Nonnull))tintColor {
+    return ^XJLabelMaker* (UIColor* color) {
+        self.label.tintColor = color;
+        return self;
+    };
+}
+
+- (XJLabelMaker *(^)(CGFloat))alpha {
+    return ^XJLabelMaker* (CGFloat alpha) {
+        self.label.alpha = alpha;
+        return self;
+    };
+}
+
+- (XJLabelMaker *(^)(UIViewContentMode))contentMode {
+    return ^XJLabelMaker* (UIViewContentMode mode) {
+        self.label.contentMode = mode;
+        return self;
+    };
+}
+
 @end
 
 
@@ -166,6 +194,7 @@
 @implementation UILabel (XJMaker)
 
 + (instancetype)xj_make:(void (^)(XJLabelMaker *))make {
+    
     XJLabelMaker *maker = [[XJLabelMaker alloc] initView];
     if (make) {
         make(maker);

@@ -18,6 +18,8 @@
 
 #pragma mark - UIView公共属性
 
+/// clipsToBounds
+@property (nonatomic, copy, readonly) XJImageViewMaker* (^clipsToBounds)(BOOL flag);
 /// 父View
 @property (nonatomic, copy, readonly) XJImageViewMaker* (^addTo)(UIView* superview);
 /// frame
@@ -42,7 +44,12 @@
 @property (nonatomic, copy, readonly) XJImageViewMaker* (^layerBorderWidth)(CGFloat width);
 /// layer.borderColor：边框颜色，传入UIColor值
 @property (nonatomic, copy, readonly) XJImageViewMaker* (^layerBorderColor)(UIColor* color);
-
+/// tintColor
+@property (nonatomic, copy, readonly) XJImageViewMaker* (^tintColor)(UIColor* color);
+/// alpha
+@property (nonatomic, copy, readonly) XJImageViewMaker* (^alpha)(CGFloat alpha);
+/// contentMode
+@property (nonatomic, copy, readonly) XJImageViewMaker* (^contentMode)(UIViewContentMode mode);
 @end
 
 

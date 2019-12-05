@@ -14,5 +14,6 @@
 #import "XJButtonMaker.h"
 #import "XJTableViewMaker.h"
 #import "XJImageViewMaker.h"
+#import "XJTextFieldMaker.h"
 
 #endif /* XJViewMakerHeader_h */
