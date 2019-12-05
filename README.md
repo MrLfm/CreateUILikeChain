@@ -1,5 +1,5 @@
 # Create UI like chain
-like this:
+Like this:
 
 ````
     self.restoreButton = [UIButton xj_make:^(XJButtonMaker *make) {
