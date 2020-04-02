@@ -18,6 +18,7 @@
 		FF3BE33622D70BC600CD1E85 /* XJTableViewMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3BE32E22D70BC600CD1E85 /* XJTableViewMaker.m */; };
 		FF3BE33722D70BC600CD1E85 /* XJViewMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3BE32F22D70BC600CD1E85 /* XJViewMaker.m */; };
 		FF3BE33822D70BC600CD1E85 /* XJButtonMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3BE33222D70BC600CD1E85 /* XJButtonMaker.m */; };
+		FF98EAEF24358284007C0A7C /* XJTextViewMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = FF98EAEE24358284007C0A7C /* XJTextViewMaker.m */; };
 		FFBD61FB2398E54F007814AD /* XJTextFieldMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBD61FA2398E54F007814AD /* XJTextFieldMaker.m */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,8 @@
 		FF3BE33122D70BC600CD1E85 /* XJLabelMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJLabelMaker.h; sourceTree = "<group>"; };
 		FF3BE33222D70BC600CD1E85 /* XJButtonMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJButtonMaker.m; sourceTree = "<group>"; };
 		FF3BE33322D70BC600CD1E85 /* XJTableViewMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJTableViewMaker.h; sourceTree = "<group>"; };
+		FF98EAED24358284007C0A7C /* XJTextViewMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJTextViewMaker.h; sourceTree = "<group>"; };
+		FF98EAEE24358284007C0A7C /* XJTextViewMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJTextViewMaker.m; sourceTree = "<group>"; };
 		FFBD61F92398E54F007814AD /* XJTextFieldMaker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XJTextFieldMaker.h; sourceTree = "<group>"; };
 		FFBD61FA2398E54F007814AD /* XJTextFieldMaker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XJTextFieldMaker.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,6 +109,8 @@
 				FFBD61FA2398E54F007814AD /* XJTextFieldMaker.m */,
 				FF3BE32A22D70BC600CD1E85 /* XJViewMaker.h */,
 				FF3BE32F22D70BC600CD1E85 /* XJViewMaker.m */,
+				FF98EAED24358284007C0A7C /* XJTextViewMaker.h */,
+				FF98EAEE24358284007C0A7C /* XJTextViewMaker.m */,
 				FF3BE32C22D70BC600CD1E85 /* XJViewMakerHeader.h */,
 			);
 			path = XJViewMaker;
@@ -183,6 +188,7 @@
 			files = (
 				FF3BE33822D70BC600CD1E85 /* XJButtonMaker.m in Sources */,
 				FF3BE31722D70BA300CD1E85 /* ViewController.m in Sources */,
+				FF98EAEF24358284007C0A7C /* XJTextViewMaker.m in Sources */,
 				FF3BE33522D70BC600CD1E85 /* XJLabelMaker.m in Sources */,
 				FF3BE33422D70BC600CD1E85 /* XJImageViewMaker.m in Sources */,
 				FFBD61FB2398E54F007814AD /* XJTextFieldMaker.m in Sources */,
